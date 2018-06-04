@@ -3,7 +3,8 @@ A Cryptography Framework for Tibco Businessworks
 
 ## Custom Functions:
 
- ###	/**
+ ###	
+ 	/**
 	 * Signs the given content based on SHA256withRSA algorithm.
 	 * 
 	 * @param privateKeyPath RSA Key
@@ -15,7 +16,8 @@ A Cryptography Framework for Tibco Businessworks
 	 */
   - String signSHA256withRSA(String privateKeyPath,String content)
   
-  ###	/**
+  ###	
+  	/**
 	 * Verify a SHA256withRSA Signature.
 	 * 
 	 * @param publicKeyPath RSA Key
@@ -28,7 +30,8 @@ A Cryptography Framework for Tibco Businessworks
 	 */
   - boolean verifySHA256withRSA(String publicKeyPath, String signatureContent, String content)
   
-  ###	/**
+  ###	
+  	/**
 	 * Encrypts the given content based on a RSA cipher
 	 * 
 	 * @param keyPath RSA Key
@@ -40,7 +43,8 @@ A Cryptography Framework for Tibco Businessworks
 	 */
   - String encryptRSACipher(String keyPath, String content)
   
-   ###	/**
+   ###	
+   	/**
 	 * Decrypt the given content based on a RSA cipher
 	 * 
 	 * @param keyPath RSA Key
@@ -53,7 +57,8 @@ A Cryptography Framework for Tibco Businessworks
   - String decryptRSACipher(String keyPath, String encryptedContent)
     
 ## Java Methods:
-###     /**
+###    
+	/**
 	 * Encrypts a file based on AES256 Algorithm
 	 * 
 	 * @param secretKeyContent AES Secret Key
@@ -65,7 +70,8 @@ A Cryptography Framework for Tibco Businessworks
 	 */
   - String encryptAES256ForFile(String secretKeyContent, String filePath)
   
-  ###    /**
+  ###    
+  	/**
 	 * Decrypts a file based on AES256 Algorithm
 	 * 
 	 * @param secretKeyContent AES Secret Key
@@ -77,7 +83,8 @@ A Cryptography Framework for Tibco Businessworks
 	 */	
   - String decryptAES256ForFile(String secretKeyContent, String encryptedFilePath)
   
-  ###   /**
+  ###   
+  	/**
 	 * Generate Private and Public Keys based on ECDH Algorithm
 	 * 	
 	 * @return String[0]-Private Key ,String[1]-Public Key
@@ -89,7 +96,8 @@ A Cryptography Framework for Tibco Businessworks
 	 */
   - String[] generateECDHKeys()
   
-  ###	/**
+  ###	
+  	/**
 	 * Generate ECDH Secret based on provided keys
 	 * 
 	 * @param privateKeyContent Base64 encoded private key
@@ -103,7 +111,8 @@ A Cryptography Framework for Tibco Businessworks
 	 */
   - String generateECDHSecret(String privateKeyContent, String publicKeyContent) 
   
-  ###	/**
+  ###	
+  	/**
 	 * Generate a SHA256 digest for given file
 	 * 
 	 * @param filePath Input file path
@@ -114,7 +123,8 @@ A Cryptography Framework for Tibco Businessworks
 	 */
   - String generateSHA512ForFile(String filePath)
   
-  ###	/**
+  ###	
+  	/**
 	 * Verify a SHA256 digest for given file
 	 * 
 	 * @param digestFilePath Digest file path
@@ -126,7 +136,8 @@ A Cryptography Framework for Tibco Businessworks
 	 */
   - boolean verifySHA512ForFile(String digestFilePath, String actualFilePath)
   
-  ###	/**
+  ###	
+  	/**
 	 * Create a Zip File out of the supplied files
 	 * 
 	 * @param zipFilePath Full path of the zip file
@@ -138,7 +149,8 @@ A Cryptography Framework for Tibco Businessworks
 	 */
   - boolean zipFiles(String zipFilePath, String[] filePaths)
   
-  ###	/**
+  ###	
+  	/**
 	 * Extacts the contents of the given zip file
 	 * 
 	 * @param zipFilePath Full path of the zip file
