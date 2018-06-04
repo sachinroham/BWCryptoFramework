@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns="www.tibco.com/plugin/java/JavaMethodActivityInput">
+    <pd:name>Processes/Test Zip.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startX>150</pd:startX>
+    <pd:startY>64</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>450</pd:endX>
+    <pd:endY>64</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1527233360145</pd:targetNamespace>
+    <pd:activity name="Zip Files">
+        <pd:type>com.tibco.plugin.java.JavaMethodActivity</pd:type>
+        <pd:resourceType>ae.activities.JavaMethodActivity</pd:resourceType>
+        <pd:x>299</pd:x>
+        <pd:y>64</pd:y>
+        <config>
+            <ConstructDeclaredClass>false</ConstructDeclaredClass>
+            <CacheConstructedClass>false</CacheConstructedClass>
+            <InvokeCleanupMethod>false</InvokeCleanupMethod>
+            <JavaGlobalInstance>/SharedResources/ZipUtility.serviceagent</JavaGlobalInstance>
+            <MethodInfo>
+                <classPath>/SharedResources/AliasLibrary.aliaslib</classPath>
+                <className>com.tibco.psg.bw.zip.ZipUtility</className>
+                <methodName>zipFiles</methodName>
+                <methodReturn>boolean</methodReturn>
+                <methodParameter>java.lang.String</methodParameter>
+                <methodParameter>[Ljava.lang.String;</methodParameter>
+            </MethodInfo>
+        </config>
+        <pd:inputBindings>
+            <ns:JavaMethodActivityInput>
+                <MethodParameters>
+                    <Parameter1>
+                        <xsl:value-of select="'C:/tmp/document.zip'"/>
+                    </Parameter1>
+                    <Parameter2>
+                        <xsl:value-of select="'C:/tmp/document.enc'"/>
+                    </Parameter2>
+                    <Parameter2>
+                        <xsl:value-of select="'C:/tmp/document.pdf'"/>
+                    </Parameter2>
+                    <Parameter2>
+                        <xsl:value-of select="'C:/tmp/document.sha512'"/>
+                    </Parameter2>
+                </MethodParameters>
+            </ns:JavaMethodActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Zip Files</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Zip Files</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>
