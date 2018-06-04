@@ -57,6 +57,15 @@ public class ZipUtility {
 		}
 	} 
 
+	/**
+	 * Extacts the contents of the given zip file
+	 * 
+	 * @param zipFilePath Full path of the zip file
+	 *  
+	 * @return String[] filePaths Array of extracted files 
+	 * @author Sachin Roham
+	 * @throws IOException 
+	 */
 	public String[] unzipFiles(String zipFilePath) throws IOException{
 		try {
 			
